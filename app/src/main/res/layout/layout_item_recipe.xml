@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="recipe"
+            type="com.example.domain.model.RecipeHome" />
+
+        <variable
+            name="itemClickListener"
+            type="com.example.retotecnico.presentation.view.adapter.AdapterRecipe.ClickListenerRecipe" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+
+        <androidx.cardview.widget.CardView
+            app:cardCornerRadius="5dp"
+            app:cardElevation="5dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{() -> itemClickListener.clickDetail(recipe)}">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="210dp">
+                <ImageButton
+                    android:id="@+id/ibRecipe"
+                    android:background="#00FFFFFF"
+                    android:layout_width="match_parent"
+                    android:layout_height="185dp"/>
+                <TextView
+                    android:layout_marginTop="4dp"
+                    android:textColor="#DD304FF6"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/textSizeNormal"
+                    android:gravity="center"
+
+                    android:text="@{recipe.name}"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

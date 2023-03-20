@@ -1,0 +1,51 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript{
+    ext.kotlin_version = '1.6.10'
+    ext.hilt_version = '2.45'
+    repositories {
+        google()
+        jcenter()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.0.2'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "com.google.dagger:hilt-android-gradle-plugin:$hilt_version"
+    }
+}
+
+
+plugins {
+    //id 'org.jetbrains.kotlin.android' version '1.6.10' apply false
+    id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin' version '2.0.1' apply false
+    id 'org.jetbrains.kotlin.android' version '1.8.0' apply false
+    //id 'org.jetbrains.kotlin.android' version '1.8.0' apply false
+}
+
+
+
+
+allprojects{
+    ext.libs = [
+            appSuport : [
+                    'androidx.appcompat:appcompat:1.6.1',
+                    'com.google.android.material:material:1.6.1',
+                    'com.google.android.gms:play-services-maps:18.1.0',
+                    'androidx.constraintlayout:constraintlayout:2.1.4'
+            ],
+            commons    : [
+                    "commons-lang:commons-lang:2.3",
+                    "io.reactivex.rxjava2:rxjava:2.2.6",
+                    "io.reactivex.rxjava2:rxandroid:2.0.2"
+            ],
+            retrofit : [
+                    "com.squareup.retrofit2:retrofit:2.9.0",
+                    "com.squareup.retrofit2:converter-gson:2.9.0"
+            ],
+            kotlin: [
+                    "com.google.dagger:hilt-android:$hilt_version",
+                    'androidx.core:core-ktx:1.7.0'
+            ]
+    ]
+}

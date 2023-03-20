@@ -1,0 +1,8 @@
+<resources>
+    <dimen name="fab_margin">16dp</dimen>
+
+    <dimen name="textSizeNormal">15dp</dimen>
+    <dimen name="textSizeRegular">18dp</dimen>
+    <dimen name="textSizeSmall">12dp</dimen>
+    <dimen name="textSizeSmall2">11dp</dimen>
+</resources>

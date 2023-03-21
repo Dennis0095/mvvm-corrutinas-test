@@ -9,6 +9,7 @@ import com.example.domain.model.RecipeHome
 import com.example.retotecnico.core.Constants.Companion.ID_RECIPE
 import com.example.retotecnico.databinding.ActivityHomeBinding
 import com.example.retotecnico.presentation.view.adapter.AdapterRecipe
+import com.example.retotecnico.presentation.view.detail.DetailRecipeActivity
 import com.example.retotecnico.presentation.viewmodel.ReceiptViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -54,8 +55,8 @@ class HomeActivity : AppCompatActivity() , AdapterRecipe.ClickListenerRecipe {
     }
 
     override fun clickDetail(recipe: RecipeHome) {
-        /*val intent = Intent(this, DetailRecipeActivity::class.java)
+        val intent = Intent(this, DetailRecipeActivity::class.java)
         intent.putExtra(ID_RECIPE, recipe.id)
-        startActivity(intent)*/
+        startActivity(intent)
     }
 }

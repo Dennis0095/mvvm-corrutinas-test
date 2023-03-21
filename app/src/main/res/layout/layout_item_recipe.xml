@@ -29,10 +29,12 @@
             android:onClick="@{() -> itemClickListener.clickDetail(recipe)}">
 
             <LinearLayout
+                android:onClick="@{() -> itemClickListener.clickDetail(recipe)}"
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="210dp">
                 <ImageButton
+                    android:onClick="@{() -> itemClickListener.clickDetail(recipe)}"
                     android:id="@+id/ibRecipe"
                     android:background="#00FFFFFF"
                     android:layout_width="match_parent"

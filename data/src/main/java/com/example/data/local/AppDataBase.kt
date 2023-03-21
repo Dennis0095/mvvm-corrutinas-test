@@ -6,7 +6,7 @@ import com.example.data.local.db.dao.RecipeDao
 import com.example.data.local.db.entity.RecipeTbl
 
 @Database(
-    version = 2,
+    version = 1,
     entities = [RecipeTbl::class]
 )
 abstract class AppDataBase : RoomDatabase() {

@@ -26,20 +26,19 @@ class DetailRecipeActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val idRecipe = intent.getIntExtra("ID_RECIPE", 0)
-        //Log.d("DMA_LECTOR", " idrecipe = " + idRecipe)
         getDetailRecipe(idRecipe)
 
     }
 
-    fun getDetailRecipe(idRecipe: Int){
-        viewModel.searchRecipe(idRecipe)
+    private fun getDetailRecipe(idRecipe: Int){
+        viewModel.searchRecipeId(idRecipe)
         viewModel.searchRecipeViewModel.observe(this) { recipe_ ->
             binding.recipe = recipe_
             loadImage(recipe_)
         }
     }
 
-    fun loadImage(recipe: Recipe){
+    private fun loadImage(recipe: Recipe){
         recipe.linkImage?.let {
             ImageUtil.load(
                 binding.root.context, binding.ibRecipeDetail, it,

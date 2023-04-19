@@ -8,7 +8,6 @@ class ViewModelMaps : ViewModel() {
 
     val updateLocation_ = MutableLiveData<LocationUser>()
 
-
     fun updateLocation(location: LocationUser){
         updateLocation_.postValue(location)
     }

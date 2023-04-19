@@ -1,0 +1,20 @@
+1. Se ha trabajado mediante modulos para que cada módulo sea indepeniente, y los módulos de alto nivel no deben de depender de los módulos de bajo nivel que son donde
+se conectan a los servicios o se trae información desde la base de datos interna.
+
+2. Se ha echo uso de la arquitectura Clean Architecture, creando los módulos de app (presentación), domain y data. Así mismo se han creado los casos de uso de Obtener las
+recetas y el buscador de recetas.
+
+3. Se ha usado los patrones de diseño Singleton, MVVM, observer, principios SOLID para la inyección de dependencias, segregación de interfaces, las clases tienen un solo objetivo por el
+cual pueden ser modificados.
+
+4. Se ha echo uso de las corrutinas para la ejecución de llamado a servicios y búsqueda de datos en la base de datos interna.
+
+5. Se ha echo uso de las Sealed class para poder trabajar de una manera más optima las respuestas de los servicios.
+
+6. Se ha usado las librerías de retrofit, dagger hilt para la inyección de dependencias, rxJava para poder usar los MutableLiveData, google maps.
+
+7. Se ha usado la plataforma mockable para poder crear las apis.
+
+8. Se ha considerado crear entidades del módulo data y entidades en el módulo dominio para reducir información que pasaremos entre los diferentes objetos.
+
+9. Se ha echo uso de ViewModel

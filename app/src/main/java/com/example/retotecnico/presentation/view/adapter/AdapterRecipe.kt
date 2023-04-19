@@ -12,8 +12,8 @@ import com.example.retotecnico.databinding.LayoutItemRecipeBinding
 
 
 class AdapterRecipe (
-    val dataModelList: List<RecipeHome>,
-    val listener: ClickListenerRecipe
+    private var dataModelList: List<RecipeHome>,
+    private val listener: ClickListenerRecipe
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder?>() {
 
 
@@ -27,6 +27,10 @@ class AdapterRecipe (
         val subcategory = dataModelList.get(position)
         val viewHolder = holder as CardRecipeViewHolder
         viewHolder.bind(subcategory)
+    }
+
+    fun updateListRecipe(dataModelList_: List<RecipeHome>){
+        this.dataModelList = dataModelList_
     }
 
     override fun getItemCount(): Int {

@@ -13,12 +13,12 @@ interface RecipeDao {
     @Insert
     suspend fun setList(listRecipe: List<RecipeTbl>)
 
-    @Query("SELECT * FROM recipe r where r.name like '%' || :word || '%'")
+    @Query("SELECT * FROM recipe r where (r.name like '%' || :word || '%')")
     suspend fun getSearchRecipeHome(word: String) : List<RecipeTbl>
 
 
     @Query("SELECT * FROM recipe r where r.id =:idRecipe")
-    suspend fun getRecipeDetail(idRecipe: Int) : RecipeTbl
+    suspend fun getRecipeDetail(idRecipe: Int) : RecipeTbl?
 
     @Query("delete from recipe")
     suspend fun deleteRecipe()

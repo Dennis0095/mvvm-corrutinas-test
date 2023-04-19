@@ -17,13 +17,16 @@ class RecipeRoom @Inject constructor(
     override suspend fun searchLocalDetaileRecipe(id: Int): Recipe {
         val recipe = Recipe()
         val recipeTbl = recipeDao.getRecipeDetail(id)
-        recipe.id = recipeTbl.id
-        recipe.linkIcon = recipeTbl.linkIcon
-        recipe.linkImage = recipeTbl.linkImage
-        recipe.description = recipeTbl.description
-        recipe.name = recipeTbl.name
-        recipe.latitude = recipeTbl.latitude
-        recipe.longitude = recipeTbl.longitude
+        recipeTbl?.let { itRecipe ->
+            recipe.id = itRecipe.id
+            recipe.linkIcon = itRecipe.linkIcon
+            recipe.linkImage = itRecipe.linkImage
+            recipe.description = itRecipe.description
+            recipe.name = itRecipe.name
+            recipe.latitude = itRecipe.latitude
+            recipe.longitude = itRecipe.longitude
+        }
+
         return recipe
     }
 

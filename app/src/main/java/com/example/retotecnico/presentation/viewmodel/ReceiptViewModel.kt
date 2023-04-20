@@ -20,7 +20,7 @@ class ReceiptViewModel @Inject constructor(
     ): ViewModel() {
 
     val recipeModel = MutableLiveData<RecipeEventResult>()
-    val recipeModel_ : LiveData<RecipeEventResult> get() = recipeModel
+    //val recipeModel_ : LiveData<RecipeEventResult> get() = recipeModel
 
     val searchRecipeViewModel = MutableLiveData<Recipe>()
     val searchRecipeTextViewModel = MutableLiveData<RecipeEventResult>()
